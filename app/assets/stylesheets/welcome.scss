@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+li {
+   color: Green;
+   font-size: 10px;
+}
+   
 h1 {
-    color: red;
+   color: red;
    }
 
 #index-title {
@@ -27,3 +32,12 @@ section {
    padding: 5px 5px 5px 5px;
    }
 
+.social-btn {
+   text-align: center;
+   font-size: 20px;
+   color: red;
+   display: 5px 5px 5px 5px;
+   height: 2.5px 2.5px;
+   width: 2.5px 2.5px;
+   background: #6000ff;
+   }
