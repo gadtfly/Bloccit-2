@@ -2,11 +2,6 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
-    @posts.each_with_index do |post, index|
-      if index % 5 == 0
-        post.title = "SPAM"
-      end
-    end
   end
 
   def show
@@ -26,7 +21,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post was saved"
       redirect_to @post
     else
-      flash[:error] = "There was an error sainv the post. Please try again"
+      flash[:error] = "There was an error sainv the post. Please try again."
       render :new
     end
   end
