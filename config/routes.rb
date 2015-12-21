@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'sponsored_post/edit'
+
+  get 'sponsored_post/index'
+
+  get 'sponsored_post/new'
+
+  get 'sponsored_post/show'
+
  #get 'quetions/index'
 
  #get 'quetions/show'
@@ -31,6 +39,7 @@ Rails.application.routes.draw do
    resources :posts, except: [:index]
   end
   resources :questions
+  resources :sponsored
 
   #get 'welcome/index'
 
