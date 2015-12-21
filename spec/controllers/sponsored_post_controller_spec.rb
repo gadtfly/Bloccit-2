@@ -18,9 +18,9 @@ RSpec.describe SponsoredPostController, type: :controller do
     
     it "assigns post to be updated to @sponsored_post" do
       get :edit, topic_id: my_topic.id, id: my_sponsored_post.id
-      post_instance = assigns(:sponsored_post)
+      sponsored_post_instance = assigns(:sponsored_post)
       
-      expect(sponosred_post_instance.id).to eq my_sponsored_post.id
+      expect(sponsored_post_instance.id).to eq my_sponsored_post.id
       expect(sponsored_post_instance.title).to eq my_sponsored_post.title
       expect(sponsored_post_instance.body).to eq my_sponsored_post.body
     end

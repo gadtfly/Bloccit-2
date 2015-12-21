@@ -3,8 +3,10 @@ include RandomData
 
 RSpec.describe Topic, type: :model do
 #  pending "add some examples to (or delete) #{_FILE_}"
-  let(:topic) { Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph) }
+  let(:topic){Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph)}
+
   it { should have_many(:posts) }
+  
   
   describe "attributes" do
       it "should respond to name" do

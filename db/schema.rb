@@ -21,14 +21,6 @@ ActiveRecord::Schema.define(version: 20151217162006) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "advertisements", force: :cascade do |t|
-    t.string   "title"
-    t.text     "copy"
-    t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
     t.text     "body"
@@ -83,17 +75,6 @@ ActiveRecord::Schema.define(version: 20151217162006) do
     t.integer  "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  add_index "sponsoreds", ["topic_id"], name: "index_sponsoreds_on_topic_id"
-
-  create_table "topics", force: :cascade do |t|
-    t.string   "name"
-    t.boolean  "public",       default: true
-    t.text     "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "sponsored_id"
   end
 
   add_index "topics", ["sponsored_id"], name: "index_topics_on_sponsored_id"
