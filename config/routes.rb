@@ -1,35 +1,35 @@
 Rails.application.routes.draw do
-  get 'sponsored_post/edit'
+# get 'sponsored_post/edit'
 
-  get 'sponsored_post/index'
+# get 'sponsored_post/index'
 
-  get 'sponsored_post/new'
+# get 'sponsored_post/new'
 
-  get 'sponsored_post/show'
+# get 'sponsored_post/show'
 
- #get 'quetions/index'
+# get 'quetions/index'
 
- #get 'quetions/show'
+# get 'quetions/show'
 
- #get 'quetions/new'
+# get 'quetions/new'
 
- #get 'quetions/edit'
+# get 'quetions/edit'
 
- #get 'advertisements/index'
+# get 'advertisements/index'
 
- #get 'advertisements/show'
+# get 'advertisements/show'
 
- #get 'advertisements/new'
+# get 'advertisements/new'
 
- #get 'advertisements/create'
+# get 'advertisements/create'
 
- #get 'posts/index'
+# get 'posts/index'
 
- #get 'posts/show'
+# get 'posts/show'
 
- #get 'posts/new'
+# get 'posts/new'
 
- #get 'posts/edit'
+# get 'posts/edit'
  
   resources :advertisements
   resources :idex
@@ -37,10 +37,10 @@ Rails.application.routes.draw do
   resources :topics do
 #  resources :posts
    resources :posts, except: [:index]
+   resources :sponsored_post
   end
   resources :questions
-  resources :sponsored
-
+  
   #get 'welcome/index'
 
   #get 'welcome/about'

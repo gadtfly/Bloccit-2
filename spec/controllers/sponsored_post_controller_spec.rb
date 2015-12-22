@@ -2,7 +2,7 @@ require 'rails_helper'
 include RandomData
 
 RSpec.describe SponsoredPostController, type: :controller do
-  let(:my_sponosred_post){Topic.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph)}
+  let(:my_sponsored_post){Topic.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph)}
   let(:my_topic){Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph)}
 
   describe "GET edit" do
@@ -74,17 +74,17 @@ RSpec.describe SponsoredPostController, type: :controller do
   
   describe "SPONSORED_POST create" do
     it "increases the number of Sponsored_Post by 1" do
-      expect{sponsored_post :create, topic_id: my_topic.id, sponsored_post: {title: RandomData.random_sentence, body: RandomData.random_paragraph}}.to change(Sponsored_Post,:count).by(1)
+      expect{sponsored_post :create, topic_id: my_topic.id, sponsored_post: {title: RandomData.random_sentence, body: RandomData.random_paragraph}}.to change(SponsoredPost,:count).by(1)
     end
 
     it "assigns the new sponsored_post to @sponsored_post" do
       sponsored_post :create, topic_id: my_topic.id, post: {title: RandomData.random_sentence, body: RandomData.random_paragraph}
-      expect(assigns(:sponsored_post)).to eq Sponsored_Post.last
+      expect(assigns(:sponsored_post)).to eq SponsoredPost.last
     end
 
     it "redirects to the new sponsored_post" do
       sponsored_post :create, topic_id: my_topic.id, sponsored_post: {title: RandomData.random_sentence, body: RandomData.random_paragraph}
-      expect(response).to redirect_to [my_topic, Sponsored_Post.last]
+      expect(response).to redirect_to [my_topic, SponsoredPost.last]
     end
   end
 
