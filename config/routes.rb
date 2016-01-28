@@ -41,6 +41,8 @@ Rails.application.routes.draw do
   end
   resources :questions
   
+  resources :users, only: [:new, :create]
+  
   #get 'welcome/index'
 
   #get 'welcome/about'
