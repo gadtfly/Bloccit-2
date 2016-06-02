@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
 
  # #2
     if user && user.authenticate(params[:session][:password])
-      create_session(:user)
-      flash[:notice] = "Welcome, #{:user.name}!"
+      create_session(user)
+      flash[:notice] = "Welcome, #{user.name}!"
       redirect_to root_path
     else
       flash.now[:alert] = 'Invalid email/password combination'
